@@ -3,49 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة كتب كتاب</title>
+    <title>عقد قران مبارك</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf6f0;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #d4af37; /* لون ذهبي */
+            font-family: 'Traditional Arabic', 'Simplified Arabic', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .invitation-card {
+            border: 1px solid #333;
+            background: linear-gradient(145deg, #111, #000);
+            padding: 60px 40px;
             text-align: center;
-            padding: 50px 20px;
-            color: #4a4a4a;
-        }
-        .container {
-            background: white;
             max-width: 500px;
-            margin: auto;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 90%;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            border-radius: 5px;
         }
-        h1 { color: #d4af37; font-size: 2.5em; }
-        .date { font-size: 1.5em; font-weight: bold; margin: 20px 0; }
-        .details { margin: 30px 0; line-height: 1.8; }
-        footer { margin-top: 30px; font-size: 0.9em; color: #888; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: normal; letter-spacing: 2px; }
+        .divider { width: 50px; height: 1px; background: #d4af37; margin: 20px auto; }
+        .date { font-size: 1.8em; margin: 25px 0; color: #fff; }
+        .details { font-size: 1.3em; line-height: 2.2; color: #ccc; }
+        .footer { margin-top: 40px; font-style: italic; opacity: 0.8; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>دعوة فرح</h1>
-        <p>بكل الحب والود، نتشرّف بدعوتكم لحضور عقد قراننا</p>
+    <div class="invitation-card">
+        <h1>عقد قران</h1>
+        <div class="divider"></div>
+        <p>بمشاعر تملؤها السعادة، نتشرف بدعوتكم لمشاركتنا لحظاتنا المميزة</p>
         
         <div class="date">
-            يوم الجمعة<br>
             ٣ يوليو ٢٠٢٦
         </div>
 
         <div class="details">
             الساعة: ٧:٠٠ مساءً<br>
-            المكان: القاهرة
+            القاهرة - جمهورية مصر العربية
         </div>
 
-        <p>حضوركم يكتمل به فرحنا</p>
-        <p>بانتظاركم!</p>
-
-        <footer>يسعدنا تشريفكم</footer>
+        <div class="divider"></div>
+        <p class="footer">حضوركم هو تمام فرحتنا</p>
     </div>
 
 </body>
