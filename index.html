@@ -2,56 +2,60 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دعوة عقد قران | Wedding Invitation</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; background-color: #0a0a0a; color: #c5a059; font-family: 'Tajawal', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
         
         /* تصميم المظروف */
-        .envelope { cursor: pointer; transition: 0.8s; text-align: center; }
-        .envelope-hidden { opacity: 0; visibility: hidden; }
+        .envelope { cursor: pointer; transition: 0.5s; text-align: center; display: block; }
+        .envelope-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         
         /* كارت الدعوة الداخلي */
-        .card { width: 90%; max-width: 500px; padding: 50px; text-align: center; border: 1px solid #c5a059; background: #0a0a0a; opacity: 0; transform: scale(0.8); transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: absolute; }
-        .card-show { opacity: 1; transform: scale(1); }
+        .card { width: 90%; max-width: 500px; padding: 50px; text-align: center; border: 1px solid #c5a059; background: #0a0a0a; opacity: 0; transform: scale(0.8); transition: 1s ease-out; position: absolute; pointer-events: none; }
+        .card-show { opacity: 1; transform: scale(1); pointer-events: auto; }
         
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.8em; margin-bottom: 5px; }
-        .names { font-family: 'Playfair Display', serif; font-size: 1.8em; margin: 20px 0; color: #fff; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5em; margin-bottom: 5px; }
+        .names { font-family: 'Playfair Display', serif; font-size: 1.6em; margin: 20px 0; color: #fff; }
         .divider { width: 60px; height: 1px; background: #c5a059; margin: 20px auto; }
-        .date { font-size: 1.5em; font-family: 'Playfair Display', serif; }
-        .footer { margin-top: 30px; font-style: italic; color: #777; }
+        .date { font-size: 1.3em; font-family: 'Playfair Display', serif; }
+        .footer { margin-top: 30px; font-style: italic; color: #777; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
-    <div class="envelope" onclick="openInvitation()">
+    <div class="envelope" id="envelope" onclick="openInvitation()">
         <div style="font-size: 4em;">✉️</div>
-        <p style="letter-spacing: 5px;">اضغط لفتح الدعوة<br>Click to open</p>
+        <p style="letter-spacing: 2px;">اضغط لفتح الدعوة<br>Click to open</p>
     </div>
 
     <div class="card" id="invitationCard">
         <h1>عقد قران</h1>
-        <p>بكل الحب والامتنان، نتشرف بدعوتكم</p>
-        
         <div class="names">أحمد & إيلين<br>Ahmed & Eileen</div>
-        
         <div class="divider"></div>
-        
         <div class="date">
             يوم الجمعة ٣ يوليو ٢٠٢٦<br>
             Friday, July 3, 2026
         </div>
-        
         <p style="margin-top: 20px;">الساعة ٧:٠٠ مساءً - القاهرة<br>7:00 PM - Cairo</p>
-        
         <div class="footer">حضوركم هو تمام فرحتنا<br>Your presence completes our joy</div>
     </div>
 
     <script>
         function openInvitation() {
-            document.querySelector('.envelope').classList.add('envelope-hidden');
-            document.getElementById('invitationCard').classList.add('card-show');
+            const env = document.getElementById('envelope');
+            const card = document.getElementById('invitationCard');
+            
+            env.style.display = 'none'; // إخفاء المظروف تماماً
+            card.classList.add('card-show');
         }
+        
+        // دعم إضافي للمس على الموبايل
+        document.getElementById('envelope').addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            openInvitation();
+        });
     </script>
 </body>
 </html>
